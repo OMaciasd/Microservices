@@ -1,0 +1,6 @@
+{
+	"message" : "This is a test",
+	"to": "Juan Perez",
+	"from": "Rita Asturia",
+	"timeToLifeSec": 45
+ }
