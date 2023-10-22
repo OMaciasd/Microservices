@@ -1,4 +1,4 @@
-# Technical Test Documentation: Microservice Project
+# Technical Test: Microservice Project
 
 ## Description
 
@@ -8,16 +8,16 @@ The reproduction of this project should only be for evaluation and feedback purp
 
 ## Whoami
 
-I am a systems administrator with over:
+I am a sysadmin with over:
 
+- 3 years administering Kubernetes.
 - 5 years in Docker administration.
 - 5 years of advanced GIT knowledge.
-- 3 years administering Kubernetes.
 - 20 years of advanced GNU/Linux administration.
 - Proficient in: 3 years with Python, 1 year with Java, Go, Ruby, and Node.
 - 5 years knowledgeable in CI/CD pipelines, on both local platforms and in the cloud.
-- 7 years in Cloud Computing management with Microsoft Azure, Amazon AWS, Google Cloud Platform, Oracle Cloud Interface.
-- 5 years of experience in IaC (Infrastructure as Code), with traditional providers, as well as OCI, VM Ware, and Digital Ocean.
+- 7 years in Cloud Computing management with Microsoft Azure, AWS, Google Cloud Platform, OCI.
+- 5 years of experience in IaC (Infrastructure as Code), with traditional providers, as well as OCI, VMware, and Digital Ocean.
 
 ## Schema
 
@@ -29,9 +29,9 @@ Constructed based on technology, services, and goals is a directory tree, which 
 
 You should install the following tools on your local machine:
 
+- ngrok.
 - Python.
 - Docker Desktop.
-- ngrok.
 
 A microservice is constructed containing a REST EndPoint called: `/DevOps`.
 
@@ -64,7 +64,12 @@ Having the following output:
 - If we use another HTTP method:
 
 ```bash
-curl -X GET -H "X-Parse-REST-API-Key: 2f5ae96c-b558-4c7b-a590-a501ae1c3f6c" -H "X-JWT-KWY: $JWT_Token" -H "Content-Type: application/json" -d '{"message": "This is a test", "to": "Juan Perez", "from": "Rita Asturia", "timeToLifeSec": 45}' http://$IP_ADDRESS_POD:$PORT/DevOps
+curl -X POST \
+-H "X-Parse-REST-API-Key: 2f5ae96c-b558-4c7b-a590-a501ae1c3f6c" \
+-H "X-JWT-KWY: $JWT_Token" \
+-H "Content-Type: application/json" \
+-d '{"message": "This is a test", "to": "Juan Perez", "from": "Rita Asturia", "timeToLifeSec": 45}' \
+https://ecf7-$NGROK-Public-Address-IP.ngrok-free.app/DevOps
 ```
 
 It will return "ERROR":
@@ -124,7 +129,7 @@ kubectl get pods
 
 ## Updates
 
-- **21-10-2023**: Deployment of microservice containerized by Docker, balanced by Kubernetes. Reviewed by [Oscar Macias]![chat].
+- **22-10-2023**: Refactoring and redesign the project for Unit Test. Reviewed by [Oscar Macias]![chat].
 
 ## Support Contact
 

@@ -1,2 +1,4 @@
-# Ignorar archivo de configuración del entorno
-.env
+*/.env
+
+*/__pycache__
+

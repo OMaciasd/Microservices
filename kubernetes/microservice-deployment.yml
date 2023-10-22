@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: microservice
-        image: omaciasd/microservice:latest
+        image: microservice:latest
         resources:
           limits:
             cpu: "1"
